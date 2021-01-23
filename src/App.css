@@ -1,0 +1,153 @@
+.App {
+  flex: 1;
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px white dashed;
+}
+
+.box {
+  padding: 0.25rem 0.5rem;
+  border: 1px white dashed;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column.gap, .row.gap {
+  gap: 1rem;
+}
+
+ul {
+  padding-left: 0.6rem;
+  list-style: outside;
+  list-style-type: "\002A";
+}
+
+li {
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+li:not(:last-child) {
+  border-bottom: 1px white dashed;
+}
+
+button {
+  border: none;
+  color: black;
+  background-color: cyan;
+  font: inherit;
+  font-weight: 800;
+}
+
+button:hover {
+  color: white;
+  background-color: teal;
+  cursor: pointer;
+}
+
+button.green {
+  background-color: lime;
+}
+
+button.green:hover {
+  background-color: green;
+}
+
+button.yellow {
+  background-color: yellow;
+}
+
+button.yellow:hover {
+  background-color: olive;
+}
+
+button:disabled, button:disabled:hover {
+  color: gray;
+  background-color: silver;
+  cursor: initial;
+}
+
+.row .column {
+  flex: 1;
+}
+
+.row .box {
+  flex: 1;
+}
+
+.red-text {
+  color: red;
+}
+
+.darkred-text {
+  color: maroon;
+}
+
+.green-text {
+  color: lime;
+}
+
+.darkgreen-text {
+  color: green;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.darkyellow-text {
+  color: olive;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.darkblue-text {
+  color: navy;
+}
+
+.purple-text {
+  color: fuchsia;
+}
+
+.darkpurple-text {
+  color: purple;
+}
+
+.cyan-text {
+  color: cyan;
+}
+
+.darkcyan-text {
+  color: teal;
+}
+
+.black-text {
+  color: black;
+}
+
+.white-text {
+  color: white;
+}
+
+.gray-text {
+  color: silver;
+}
+
+.darkgray-text {
+  color: gray;
+}
