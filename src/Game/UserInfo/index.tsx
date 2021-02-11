@@ -6,9 +6,8 @@ import abbreviate from '@pqt/abbreviate';
 
 export default function Bonuses() {
   const { data: queryData, loading: queryLoading, error: queryError } = useQuery(USER_QUERY);
-  const { data: subData, error: subError } = useSubscription(USER_SUBSCRIPTION);
 
-  let user = subData?.userLive || queryData?.me;
+  let user = queryData?.me;
 
   if (queryLoading) {
     return (
@@ -18,12 +17,12 @@ export default function Bonuses() {
       </div>
     );
   }
-  
-  if (queryError || subError) {
+
+  if (queryError) {
     return (
       <div className="box">
         <p className="title purple-text">User Info</p>
-        <p className="red-text">Could not {subError ? 'update' : 'fetch'} your user</p>
+        <p className="red-text">Could not {'fetch'} your user</p>
       </div>
     );
   }
