@@ -8,11 +8,13 @@ import abbreviate from '@pqt/abbreviate';
 export default function Mine() {
   const { data: queryData, loading: queryLoading, error: queryError } = useQuery(USER_QUERY);
   const { data: subData, error: subError } = useSubscription(USER_SUBSCRIPTION);
+
+  let user = subData?.userLive || queryData?.me;
+
   const [gatherStone] = useMutation(GATHER_STONE_MUTATION);
   const [buyMiner] = useMutation(BUY_MINER_MUTATION);
   const [sellStone] = useMutation(SELL_STONE_MUTATION);
   const [upgradeMine] = useMutation(UPGRADE_MINE_MUTATION);
-  let user = subData?.userLive || queryData?.me;
 
   const upgrade = useCallback(() => {
     upgradeMine().catch(err => {
@@ -25,7 +27,6 @@ export default function Mine() {
       console.log(err);
     });
   }, [gatherStone]);
-
 
   const sell = useCallback(() => {
     sellStone().catch(err => {

@@ -20,11 +20,11 @@ const authLink = new ApolloLink((operation, forward) => {
 });
 
 const httpLink = new HttpLink({
-  uri: `http://${Config.BACKEND_HOST}:${Config.BACKEND_PORT}/graphql`,
+  uri: `http://${Config.BACKEND_HOST}/graphql`,
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://${Config.BACKEND_HOST}:${Config.BACKEND_PORT}/graphql`,
+  uri: `ws://${Config.BACKEND_HOST}/graphql`,
   options: {
     reconnect: true,
     connectionParams: () => {

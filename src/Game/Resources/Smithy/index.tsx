@@ -8,11 +8,13 @@ import abbreviate from '@pqt/abbreviate';
 export default function Smithy() {
   const { data: queryData, loading: queryLoading, error: queryError } = useQuery(USER_QUERY);
   const { data: subData, error: subError } = useSubscription(USER_SUBSCRIPTION);
+
+  let user = subData?.userLive || queryData?.me;
+
   const [gatherIron] = useMutation(GATHER_IRON_MUTATION);
   const [buyBlacksmith] = useMutation(BUY_BLACKSMITH_MUTATION);
   const [sellIron] = useMutation(SELL_IRON_MUTATION);
   const [upgradeSmithy] = useMutation(UPGRADE_SMITHY_MUTATION);
-  let user = subData?.userLive || queryData?.me;
 
   const upgrade = useCallback(() => {
     upgradeSmithy().catch(err => {
