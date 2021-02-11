@@ -1,15 +1,50 @@
 import { gql } from "@apollo/client";
 
 export const GATHER_WOOD_MUTATION = gql`
+  mutation GatherWood {
+    gatherWood {
+      id
+      lumberjack
+      wood
+      level
+    }
+  }
 `;
 
 export const SELL_WOOD_MUTATION = gql`
+  mutation SellWood {
+    sellWood {
+      id
+      balance
+      lumberyard {
+        id
+        wood
+      }
+    }
+  }
 `;
 
 export const BUY_LUMBERJACK_MUTATION = gql`
+  mutation BuyLumberjack($input: BuyLumberjackInput!) {
+    buyLumberjack(input: $input) {
+      id
+      lumberjack
+      cost_1
+      cost_10
+      cost_100
+    }
+  }
 `;
 
 export const UPGRADE_LUMBERYARD_MUTATION = gql`
+  mutation UpgradeLumberyard {
+    upgradeLumberyard {
+      id
+      level
+      cost_level
+      level_multiplier
+    }
+  }
 `;
 
 export const GATHER_STONE_MUTATION = gql`

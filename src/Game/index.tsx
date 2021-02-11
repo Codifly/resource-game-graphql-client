@@ -53,7 +53,7 @@ export default function Game() {
         {/* <Bonuses /> */}
         <UserInfo />
         {/* <ActiveBonuses /> */}
-        {/* <Resources /> */}
+        <Resources />
       </div>
     </>
   );
