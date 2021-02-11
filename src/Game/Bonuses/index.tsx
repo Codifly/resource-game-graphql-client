@@ -21,15 +21,7 @@ export default function Bonuses() {
 
   const buy = useCallback((id) => {
     return () => {
-      buyBonus({
-        variables: {
-          input: {
-            id,
-          },
-        },
-      }).catch(err => {
-        console.log(err);
-      });
+      // buy bonus mutation here.
     }
   }, [buyBonus]);
 

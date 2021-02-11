@@ -6,6 +6,7 @@ import { USER_SUBSCRIPTION } from '../subscriptions';
 export default function ActiveBonuses() {
   const { data: queryData, loading: queryLoading, error: queryError } = useQuery(USER_QUERY);
   const { data: subData, error: subError } = useSubscription(USER_SUBSCRIPTION);
+
   let user = subData?.userLive || queryData?.me;
 
   if (queryLoading) {

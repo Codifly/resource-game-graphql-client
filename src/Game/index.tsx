@@ -13,48 +13,26 @@ const password = 'password';
 
 export default function Game() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [login, { loading, error }] = useMutation(LOGIN_MUTATION);
+  // Create login mutation here.
 
-  const handleLogin = useCallback(async () => {
-    const { data, errors } = await login({
-      variables: {
-        input: {
-          username,
-          password,
-        },
-      },
-    });
-    if (!errors) {
-      Cookies.set('token', data.login.token);
-      setLoggedIn(true);
-    }
-  }, [login, setLoggedIn]);
+  return null;
 
-  useEffect(() => {
-    const loginToken = Cookies.get('token');
-    if (!loginToken) {
-      handleLogin();
-    } else {
-      setLoggedIn(true);
-    }
-  }, []);
+  // if (loading || !loggedIn) {
+  //   return <p>Logging in...</p>;
+  // }
 
-  if (loading || !loggedIn) {
-    return <p>Logging in...</p>;
-  }
+  // if (error) {
+  //   return <p style={{ whiteSpace: 'pre-wrap' }}>An error occured: {JSON.stringify(error, null, ' ')}</p>;
+  // }
 
-  if (error) {
-    return <p style={{ whiteSpace: 'pre-wrap' }}>An error occured: {JSON.stringify(error, null, ' ')}</p>;
-  }
-
-  return (
-    <>
-      <div className="column gap">
-        <Bonuses />
-        <UserInfo />
-        <ActiveBonuses />
-        <Resources />
-      </div>
-    </>
-  );
+  // return (
+  //   <>
+  //     <div className="column gap">
+  //       {/* <Bonuses /> */}
+  //       <UserInfo />
+  //       {/* <ActiveBonuses /> */}
+  //       <Resources />
+  //     </div>
+  //   </>
+  // );
 }

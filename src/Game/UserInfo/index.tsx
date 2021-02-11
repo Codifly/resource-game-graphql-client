@@ -7,6 +7,7 @@ import abbreviate from '@pqt/abbreviate';
 export default function Bonuses() {
   const { data: queryData, loading: queryLoading, error: queryError } = useQuery(USER_QUERY);
   const { data: subData, error: subError } = useSubscription(USER_SUBSCRIPTION);
+
   let user = subData?.userLive || queryData?.me;
 
   if (queryLoading) {
