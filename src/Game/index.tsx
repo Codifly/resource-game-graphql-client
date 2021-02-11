@@ -51,7 +51,7 @@ export default function Game() {
     <>
       <div className="column gap">
         {/* <Bonuses /> */}
-        {/* <UserInfo /> */}
+        <UserInfo />
         {/* <ActiveBonuses /> */}
         {/* <Resources /> */}
       </div>
